@@ -25,7 +25,9 @@ app.set("view engine", "ejs");
 // mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
 // console.log(process.env.DATABASEURL)
 // mongoose.connect("mongodb+srv://janie:janie@cluster0-ipdbc.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+// incase if our environment variable breaks, we have a backup for our local
+const url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+mongoose.connect(url, { useNewUrlParser: true });
 // seed the database
 // seedDB();
 
