@@ -3,13 +3,9 @@ const express = require("express"),
 		passport = require("passport"),
 		User = require("../models/user");
 
-// router.get("/", function(req, res){
-// 	res.render("landing");
-// });
-
 router.get("/", function(req, res){
-	res.send("Home Page");
-})
+	res.render("landing");
+});
 
 // ============================
 // AUTH ROUTES
