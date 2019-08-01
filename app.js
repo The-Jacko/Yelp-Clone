@@ -23,7 +23,9 @@ app.use(methodOverride("_method"));
 app.use(flash());
 app.set("view engine", "ejs");
 // mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
-mongoose.connect("mongodb+srv://janie:janie@cluster0-ipdbc.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+// console.log(process.env.DATABASEURL)
+// mongoose.connect("mongodb+srv://janie:janie@cluster0-ipdbc.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 // seed the database
 // seedDB();
 
